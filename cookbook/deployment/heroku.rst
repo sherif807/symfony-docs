@@ -89,8 +89,7 @@ applications. However, two special circumstances apply to Symfony applications:
 
 #. The document root is in the ``web/`` directory and not in the root directory
    of the application;
-#. The Composer ``bin-dir``, where vendor binaries (and thus Heroku's own boot
-   scripts) are placed, is ``bin/`` , and not the default ``vendor/bin``.
+
 
 .. note::
 
@@ -104,7 +103,7 @@ directory of the application and add just the following content:
 
 .. code-block:: text
 
-    web: bin/heroku-php-apache2 web/
+    web: vendor/bin/heroku-php-apache2 web/
 
 .. note::
 
@@ -121,7 +120,7 @@ create the ``Procfile`` file and to add it to the repository:
 
 .. code-block:: bash
 
-    $ echo "web: bin/heroku-php-apache2 web/" > Procfile
+    $ echo "web: vendor/bin/heroku-php-apache2 web/" > Procfile
     $ git add .
     $ git commit -m "Procfile for Apache and PHP"
     [master 35075db] Procfile for Apache and PHP
